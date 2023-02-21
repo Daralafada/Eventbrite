@@ -19,4 +19,4 @@ class UserMailer < ApplicationMailer
     mail(to: @user.email, subject: 'Nouveau participant')
   end 
 end
-end
+
