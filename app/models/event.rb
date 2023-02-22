@@ -12,7 +12,7 @@ class Event < ApplicationRecord
 	validates :price, presence:true, numericality: { only_integer: true, in: 1..1000 }
 	validates :location, presence:true,
 
-  validate :valid_eligiblity?
+  validates :valid_eligiblity?
 
   def valid_eligiblity?
     return unless :start_date?
@@ -22,7 +22,8 @@ class Event < ApplicationRecord
     end
   end
 
-  validate :valid_duration?
+  validates :valid_duration?
+  def valid_duration?
   	return unless :duration?
 
     if !duration % 5 == 0
@@ -31,4 +32,3 @@ class Event < ApplicationRecord
   end
 end
 
-end

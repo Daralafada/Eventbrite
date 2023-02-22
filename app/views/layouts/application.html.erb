@@ -10,37 +10,29 @@
     <%= javascript_importmap_tags %>
   </head>
 
-  <div class="container-fluid">
-  <nav class="navbar navbar-inverse">
-    <div class="container-fluid">
-      <ul class="nav navbar-nav">
-        <li><a id="len1" class="hoverable" href="#">Accueil</a></li>
-        <li><a id="len2" class="hoverable" href="#">Créer un évènement</a></li>
-        <li><a id="len3" class="hoverable" href="#">Profil</a></li>
-        <li><a id="len4" class="hoverable" href="#">Contact</a>
-        <% if current_user %>
-                <a href="#" class="hoverable">Ton profil</a>
-                <a href="#" class="hoverable">Se déconnecter</a>
+<div style="
+      background-size: contain; 
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      background-position: center;
+      background-image: url(https://images.healthshots.com/healthshots/en/uploads/2021/08/13105537/gossiping-2-770x433.jpg)" class="bg-cover">
+
+          <div class="container py-5 text-center">
+              <h1 class="display-4 text-black font-weight-bold bg-white mb-5" style="font-family: 'Bebas Neue', cursive;">Eventbrite</h1>
+              <a href="http://localhost:3000/" role="button" class="btn btn-light px-5">Accueil</a>
+              <a href="http://localhost:3000/team" role="button" class="btn btn-light px-5">Créer un event</a>
+            
+              <% if current_user %>
+                <a href="#" role="button" class="btn btn-light px-5">Ton profil</a>
+                <a href="#" role="button" class="btn btn-light px-5">Se déconnecter</a>
 
               <%else %>
-                <a href=new_user_registration class="hoverable">S'inscrire</a>
-                <a href=new_user_session class="hoverable"> Se connecter</a> %>
-              <%end%></li>
-      </ul>
-    </div>
-  </nav>
-  <div id="what-the-hell-is-this">
-    <div class="page-title">
-      <h2>Simple Navigation</h2>
-      <p class="lead">
-        Based on Hover.css, the goal of this pen
-        is to create a simple navigation bar <br />
-        that can be easily reused in both mobile and native displays. Mouse over the nav text for animation!
-      </p>
-    </div>
-  </div>
-</div>
-
+                <a href="#" role="button" class="btn btn-light px-5">S'inscrire</a>
+                <a href="#" role="button" class="btn btn-light px-5"> Se connecter</a> %>
+              <%end%>
+              
+          </div>
+      </div>
   <body>
     <%= yield %>
   </body>
