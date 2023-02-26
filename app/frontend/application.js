@@ -1,6 +1,7 @@
 // Configure your import map in config/importmap.rb. Read more: https://github.com/rails/importmap-rails
 import "@hotwired/turbo-rails"
 import "controllers"
+import '../js/bootstrap_js_files.js'  
 
 $(function(){
   var str = '#len'; //increment by 1 up to 1-nelemnts

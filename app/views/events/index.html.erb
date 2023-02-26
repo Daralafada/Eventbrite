@@ -1,1 +1,25 @@
 <h1> Bienvenue </h1>
+
+<div class="card-deck d-flex flex-wrap justify-content-around ">
+	<% @events.each do |event| %>
+		<div class="card text-light bg-light mb-3 text-center" style = "width:23%">
+		
+			<div class="card-header bg-dark mb-1"><%= event.title%></div>
+			
+			<div class="card-body">
+				  <h6 class="card-subtitle mb-2 text-dark" style="font-family: 'Amatic SC', cursive; font-size: 25px;"><%= event.start_date%></h6>
+				  
+				  <p class="card-text text-truncate text-dark" style="font-family: 'Oooh Baby', cursive;"> <%= event.description%></p>
+			
+				<div class="card-footer">
+				  <a 
+				    href=http://localhost:3000/gossip/<%= event.price%> 
+				    class="btn btn-dark px-5" 
+				    role="button">
+				    <%= event.price%>€</a>
+				</div>
+			</div>
+		</div>
+		<%end%>
+	</div>
+</div>

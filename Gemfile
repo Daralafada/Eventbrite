@@ -78,3 +78,9 @@ gem "dockerfile-rails", ">= 1.1", :group => :development
 gem "pg", "~> 1.4"
 
 gem "redis", "~> 5.0"
+
+gem "faker"
+gem "table_print"
+
+gem 'webpacker', '~> 5.0'  
+

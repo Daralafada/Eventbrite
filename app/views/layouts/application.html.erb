@@ -6,34 +6,78 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
-    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+    <%= stylesheet_pack_tag 'application', media: 'all', 'data-turbolinks-track': 'reload'  %>
     <%= javascript_importmap_tags %>
+
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@300&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@700&family=Bebas+Neue&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Oooh+Baby&display=swap" rel="stylesheet">
+    
+    <style>
+    h1, h2, h3, h4, body {
+      font-family: 'Bebas Neue', cursive;
+    } 
+    h6 card-subtitle {
+      font-family: 'Amatic SC', cursive;
+      font-size: 25px;
+    }
+    p card-text {
+      font-family: 'Oooh Baby', cursive
+    }
+    </style>
   </head>
 
-<div style="
-      background-size: contain; 
-      background-repeat: no-repeat;
-      background-attachment: fixed;
-      background-position: center;
-      background-image: url(https://images.healthshots.com/healthshots/en/uploads/2021/08/13105537/gossiping-2-770x433.jpg)" class="bg-cover">
-
-          <div class="container py-5 text-center">
-              <h1 class="display-4 text-black font-weight-bold bg-white mb-5" style="font-family: 'Bebas Neue', cursive;">Eventbrite</h1>
-              <a href="http://localhost:3000/" role="button" class="btn btn-light px-5">Accueil</a>
-              <a href="http://localhost:3000/team" role="button" class="btn btn-light px-5">Créer un event</a>
-            
+  <nav class="navbar navbar-expand-lg navbar-dark p-3 bg-danger" id="headerNav">
+      <div class="container-fluid">
+        <a class="navbar-brand d-block d-lg-none" href="#">
+          <img src="/static_files/images/logos/logo_2_white.png" height="80" />
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+    
+        <div class=" collapse navbar-collapse" id="navbarNavDropdown">
+          <ul class="navbar-nav mx-auto ">
+            <li class="nav-item">
+              <a class="nav-link mx-2 active" aria-current="page" href="/">Accueil</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link mx-2" href="/events/new">Créer un event</a>
+            </li>
+            <li class="nav-item d-none d-lg-block">
+              <a class="nav-link mx-2" href="#">
+                <img src="/static_files/images/logos/logo_2_white.png" height="80" />
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link mx-2" href="">Ton agenda</a>
+            </li>
+            <li class="nav-item dropdown">
               <% if current_user %>
-                <a href="#" role="button" class="btn btn-light px-5">Ton profil</a>
-                <a href="#" role="button" class="btn btn-light px-5">Se déconnecter</a>
-
+                <a class="nav-link mx-2 dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  Compte
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                  <li><a class="dropdown-item" href="#">Profil</a></li>
+                  <li><a class="dropdown-item" href="#">Se déconnecter</a></li>
               <%else %>
-                <a href="#" role="button" class="btn btn-light px-5">S'inscrire</a>
-                <a href="#" role="button" class="btn btn-light px-5"> Se connecter</a> %>
-              <%end%>
-              
-          </div>
+                <a class="nav-link mx-2 dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  Se connecter/S'inscrire
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                  <li><a class="dropdown-item" href="#">S'inscrire</a></li>
+                  <li><a class="dropdown-item" href="#">Se connecter</a></li>
+              <% end %>
+            
+              </ul>
+            </li>
+          </ul>
+        </div>
       </div>
-  <body>
-    <%= yield %>
-  </body>
+    </nav>
+
+    
 </html>
